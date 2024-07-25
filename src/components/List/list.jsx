@@ -91,7 +91,7 @@
 // export default List;
 
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -109,18 +109,19 @@ function List({API}) {
     setShow(show => (show === opt ? "" : opt));
   }
 
-  const fetchList = async () => {
+  const fetchList = useCallback( async () => {
     try {
       const response = await axios.get(`${API}/api/homeservice/list`);
       if (response.data.success) {
         setList(response.data.data);
+        console.log(response.data.data)
       } else {
         toast.error("Error fetching list");
       }
     } catch (error) {
       toast.error("Error fetching list");
     }
-  }
+  },[API]);
 
   const removeService = async (serviceId) => {
     try {
@@ -138,7 +139,7 @@ function List({API}) {
 
   useEffect(() => {
     fetchList();
-  }, []);
+  }, [fetchList]);
 
   const serviceList = (heading, header, type, category) => (
     <div>

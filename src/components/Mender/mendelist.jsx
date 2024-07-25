@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Select from "react-select";
-import { Modal, Form, Input,Select as AntSelect  } from 'antd';
+import { Modal, Form, Input  } from 'antd';
 import 'antd/dist/reset.css'; // Import Ant Design styles
 import { assests } from "../../assests/assests";
 
@@ -70,7 +70,7 @@ function MenderList({ API }) {
         } catch (error) {
             toast.error("Error during fetching mender data");
         }
-    }, [API]);
+    }, [API,filterInactiveoption,filterLogoutOption,filterOption,inactiveSearchNumber,logoutSearchNumber, searchNumber]);
 
     useEffect(() => {
         fetchMenderData();

@@ -14,7 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   // const API = "http://localhost:3420";
   const API = "https://backend-kg0v.onrender.com";
-  
+
   return (
     <>
       <Navbar />
