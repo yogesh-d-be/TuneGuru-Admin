@@ -124,7 +124,7 @@ function Add({API}) {
                     <div>
                         <p>Upload Image</p>
                         <label htmlFor="image">
-                            <div className="w-[120px] h-[120px] border border-gray-200 flex justify-center items-center mt-2">
+                            <div className="w-[120px] h-[120px] border border-gray-200 flex justify-center items-center mt-2 cursor-pointer">
                                 <img src={image ? URL.createObjectURL(image) : assests.upload} alt="upload" className="w-20" />
                             </div>
                         </label>
@@ -183,6 +183,9 @@ function Add({API}) {
                                 <option value="select">select</option>
                                 <option value="split">Split</option>
                                 <option value="window">Window</option>
+                                <option value="singledoor">Single Door</option>
+                                <option value="doubledoor">Double Door</option>
+                                <option value="sidedoor">Side Door</option>
                             </select>
                         </div>
                     </div>

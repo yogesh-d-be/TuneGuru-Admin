@@ -184,11 +184,22 @@ function List({API}) {
       <div className="w-[85%] ml-[7%]">
         <h1 className="font-bold text-2xl mt-4">All Services</h1>
         <h1 className="font-semibold text-xl mt-4">Appliances</h1>
+        <h2 className="font-semibold text-lg mt-4">Air-Conditioner</h2>
         <div className="mt-4">
         {serviceList('','Split Ac','Appliances','split')}
         </div>
         <div className="mt-4">
         {serviceList('','Window Ac','Appliances','window')}
+        </div>
+        <h2 className="font-semibold text-lg mt-4">Refrigerator</h2>
+        <div className="mt-4">
+        {serviceList('','Single Door Fridge','Appliances','singledoor')}
+        </div>
+        <div className="mt-4">
+        {serviceList('','Double Door Fridge','Appliances','doubledoor')}
+        </div>
+        <div className="mt-4">
+        {serviceList('','Side Door Fridge','Appliances','sidedoor')}
         </div>
       </div>
     </>
