@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { assests } from "../../assests/assests";
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Add({API}) {
@@ -118,7 +118,7 @@ function Add({API}) {
 
     return (
         <>
-            <ToastContainer />
+            
             <div className="ml-16 mt-12 text-gray-500 max-sm:ml-6">
                 <form onSubmit={onSubmitHandle} className="flex flex-col gap-2 w-[100%] mb-20">
                     <div>
@@ -141,6 +141,8 @@ function Add({API}) {
                             <option value="AC">AC</option>
                             <option value="Fridge">Fridge</option>
                             <option value="Washing Machine">Washing Machine</option>
+                            <option value="TV">TV</option>
+                            <option value="mixer&grinder">Mixer & Grinder</option>
                         </select>
                     </div>
                     <div className="flex flex-col gap-2 max-w-[40%] min-w-[250px]">
@@ -175,6 +177,8 @@ function Add({API}) {
                                 <option value="service">Service</option>
                                 <option value="repair">Repair</option>
                                 <option value="install">Installation & Uninstallation</option>
+                                <option value="on-install">Installation</option>
+                                <option value="on-uninstall">Uninstallation</option>
                             </select>
                         </div>
                         <div className="flex flex-col gap-2">
@@ -186,6 +190,14 @@ function Add({API}) {
                                 <option value="singledoor">Single Door</option>
                                 <option value="doubledoor">Double Door</option>
                                 <option value="sidedoor">Side Door</option>
+                                <option value="wm_common">Wm_All</option>
+                                <option value="wm_common_install">Wm_All_Install</option>
+                                <option value="wm_common_uninstall">Wm_All_Uninstall</option>
+                                <option value="tv_common">Tv_All_repair</option>
+                                <option value="tv_common_install">Tv_All_install</option>
+                                <option value="tv_common_uninstall">Tv_All_uninstall</option>
+                                <option value="mixer">Mixer</option>
+                                <option value="wet_grinder">Wet Grinder</option>
                             </select>
                         </div>
                     </div>

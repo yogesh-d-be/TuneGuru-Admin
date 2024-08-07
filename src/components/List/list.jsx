@@ -92,7 +92,7 @@
 
 import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // FontAwesome icons import
@@ -142,12 +142,12 @@ function List({API}) {
   }, [fetchList]);
 
   const serviceList = (heading, header, type, category) => (
-    <div>
-        <div className="flex justify-between w-[80%] pr-4 py-3 bg-blue-400 pl-3 rounded-lg max-[830px]:w-[97%]" onClick={() => toggle(header)}>
+    <div className="duration-1000 transition-all ease-in-out">
+        <div className="flex justify-between w-[80%] pr-4 py-3 bg-blue-400 pl-3 rounded-lg max-[830px]:w-[97%]" onClick={() => toggle(category)}>
          <h2 className="cursor-pointer font-semibold text-lg">{header}</h2>
-      <div onClick={() => toggle(header)} className="cursor-pointer">{show === header ? <span onClick={() => toggle(header)} className="cursor-pointer"><FontAwesomeIcon icon={faCircleDown} /></span> : <span onClick={() => toggle(header)} className="cursor-pointer"><FontAwesomeIcon icon={faCircleUp} /></span>}</div>
+      <div onClick={() => toggle(category)} className="cursor-pointer">{show === category ? <span onClick={() => toggle(category)} className="cursor-pointer"><FontAwesomeIcon icon={faCircleDown} /></span> : <span onClick={() => toggle(category)} className="cursor-pointer"><FontAwesomeIcon icon={faCircleUp} /></span>}</div>
       </div>
-      {show === header && (
+      {show === category && (
     <table className="border border-black w-[80%] mt-4 max-[450px]:mr-3 max-[830px]:w-[97%] table-auto">
         <thead className="border border-black " >
             <tr>
@@ -180,7 +180,7 @@ function List({API}) {
 
   return (
     <>
-      <ToastContainer />
+      
       <div className="w-[85%] ml-[7%]">
         <h1 className="font-bold text-2xl mt-4">All Services</h1>
         <h1 className="font-semibold text-xl mt-4">Appliances</h1>
@@ -200,6 +200,33 @@ function List({API}) {
         </div>
         <div className="mt-4">
         {serviceList('','Side Door Fridge','Appliances','sidedoor')}
+        </div>
+        <h2 className="font-semibold text-lg mt-4">Washing Machine</h2>
+        <div className="mt-4">
+        {serviceList('','Repair','Appliances','wm_common')}
+        </div>
+        <div className="mt-4">
+        {serviceList('','Installation','Appliances','wm_common_install')}
+        </div>
+        <div className="mt-4">
+        {serviceList('','Uninstallation','Appliances','wm_common_uninstall')}
+        </div>
+        <h2 className="font-semibold text-lg mt-4">TV</h2>
+        <div className="mt-4">
+        {serviceList('','Repair','Appliances','tv_common')}
+        </div>
+        <div className="mt-4">
+        {serviceList('','Installation','Appliances','tv_common_install')}
+        </div>
+        <div className="mt-4">
+        {serviceList('','Uninstallation','Appliances','tv_common_uninstall')}
+        </div>
+        <h2 className="font-semibold text-lg mt-4">Mixer & Grinder</h2>
+        <div className="mt-4">
+        {serviceList('','Mixer Repair','Appliances','mixer')}
+        </div>
+        <div className="mt-4">
+        {serviceList('','Wet Grinder Repair','Appliances','wet_grinder')}
         </div>
       </div>
     </>
